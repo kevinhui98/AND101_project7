@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         pokemonList = mutableListOf()
         rv_pokemon = findViewById(R.id.rvPokemon)
+        rv_pokemon.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL,false)
         GetPokemonURL()
         //Getting API call
         //next button
@@ -65,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 pokemonList.add(newItem)
                 val adapter = PokemonAdapter(pokemonList)
                 rv_pokemon.adapter = adapter
-                rv_pokemon.layoutManager = LinearLayoutManager(this@MainActivity)
+//                rv_pokemon.layoutManager = LinearLayoutManager(this@MainActivity)
 //                pokemon_name.text = json?.jsonObject?.getString("name")
                 //name
 //                pokemon_id.text = json?.jsonObject?.getString("id")

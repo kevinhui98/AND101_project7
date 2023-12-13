@@ -35,7 +35,7 @@ class PokemonAdapter(private val pokemonList: List<pokemon>): RecyclerView.Adapt
 
         Glide.with(holder.itemView)
             .load(pokemonList[position].image)
-            .centerCrop()
+            .fitCenter()
             .into(holder.image)
     }
 }
